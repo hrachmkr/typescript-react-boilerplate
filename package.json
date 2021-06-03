@@ -1,0 +1,93 @@
+{
+  "name": "media-library",
+  "version": "1.0.0",
+  "description": "Media Library Single Page Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --no-cache",
+    "start": "webpack serve --config webpack.config.js --mode development",
+    "build-test": "DEPLOY=true NODE_ENV='development' webpack --config webpack.config.js --mode development",
+    "build-prod": "NODE_ENV='production' webpack --config webpack.config.js --mode production",
+    "update-version": "node ./scripts/updateVersion",
+    "upload-prod": "node ./scripts/uploadProd",
+    "publish-test": "npm run build-test && node ./scripts/uploadTest.js",
+    "publish-local": "npm run build-test && node ./scripts/uploadLocal.js",
+    "publish-stage": "./scripts/publishStage.sh",
+    "publish-prod": "npm run update-version && npm run build-prod && npm run upload-prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renderforest/media-library.git"
+  },
+  "engines": {
+    "node": "14.15.1",
+    "npm": "6.14.8"
+  },
+  "author": "Hrach Mkrtchyan",
+  "license": "ISC",
+  "browserslist": [
+    "> 1%",
+    "ie > 9"
+  ],
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "core"
+    ],
+    "moduleNameMapper": {
+      "^core": "<rootDir>",
+      "^selectors": "<rootDir>/core/selectors",
+      "^redux": "<rootDir>/core/redux"
+    },
+    "testMatch": [
+      "<rootDir>/**/**/**/**/*.spec.js",
+      "<rootDir>/**/**/**/*.spec.js",
+      "<rootDir>/**/**/*.spec.js",
+      "<rootDir>/**/*.spec.js"
+    ]
+  },
+  "dependencies": {
+    "@renderforest/rf-ui-library": "1.0.807",
+    "framer-motion": "^2.9.2",
+    "image-file-to-base64-exif": "^1.0.3",
+    "immer": "9.0.2",
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.0.8",
+    "lodash.memoize": "^4.1.2",
+    "react-redux": "7.1.1",
+    "react-window": "^1.8.6",
+    "redux": "4.1.0",
+    "redux-thunk": "2.3.0",
+    "reselect": "4.0.0",
+    "smoothscroll-polyfill": "^0.4.4",
+    "styled-components": "4.4.0",
+    "whatwg-fetch": "3.0.0"
+  },
+  "devDependencies": {
+    "@sentry/browser": "4.6.6",
+    "@types/node": "15.9.0",
+    "@types/react": "^17.0.6",
+    "@types/react-dom": "^17.0.5",
+    "@types/react-redux": "^7.1.16",
+    "@types/webpack-env": "^1.16.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "aws-sdk": "2.347.0",
+    "eslint": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "^5.3.1",
+    "path": "0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass-loader": "10.1.1",
+    "source-map-loader": "^3.0.0",
+    "ssh2-sftp-client": "^4.2.2",
+    "terser-webpack-plugin": "^2.2.1",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
