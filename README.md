@@ -1,2 +1,3 @@
-# media-library
-Media Library Single Page Application
+# Typescript React Boilerplate
+
+Typescript React Boilerplate Application
