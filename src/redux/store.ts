@@ -1,4 +1,9 @@
-import { createStore, applyMiddleware, compose, Store } from 'redux'
+import {
+  legacy_createStore as createStore,
+  applyMiddleware,
+  compose,
+  Store,
+} from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 

@@ -29,6 +29,16 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         loader: 'ts-loader',
+        options: {
+          getCustomTransformers: path.join(
+            __dirname,
+            './webpack.ts-transformers.js'
+          ),
+        },
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
@@ -45,10 +55,11 @@ module.exports = {
     filename: `bundle${isProd ? `.min` : ''}.js`,
   },
   devServer: {
-    contentBase: './dist',
-    disableHostCheck: true,
-    historyApiFallback: true,
-    hot: true,
+    // contentBase: './dist',
+    // disableHostCheck: true,
+    // historyApiFallback: true,
+    // hot: true,
+    static: path.resolve(__dirname, 'dist'),
     port: 8080,
   },
   resolve: {
@@ -65,6 +76,10 @@ module.exports = {
       actions: path.resolve(__dirname, 'src/redux/actions/'),
       reducers: path.resolve(__dirname, 'src/redux/reducers/'),
       selectors: path.resolve(__dirname, 'src/redux/selectors/'),
+      containers: path.resolve(__dirname, 'src/containers'),
+      styled: path.resolve(__dirname, 'src/styled'),
+      static: path.resolve(__dirname, 'src/static'),
+      icons: path.resolve(__dirname, 'src/icons'),
     },
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },

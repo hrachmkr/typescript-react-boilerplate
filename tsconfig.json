@@ -4,10 +4,11 @@
     "module": "commonjs",
     "noImplicitAny": true,
     "outDir": "./dist/",
+    "skipLibCheck": true,
     "preserveConstEnums": true,
     "removeComments": true,
     "sourceMap": true,
-    "target": "es5",
+    "target": "es2019",
     "alwaysStrict": true,
     "strict": true,
     "strictFunctionTypes": true,
@@ -15,22 +16,50 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
     "noImplicitReturns": true,
     "noUnusedParameters": true,
     "baseUrl": "src",
     "paths": {
-      "reducerTypes/*": ["interfaces/redux/reducers/*"],
-      "actionTypes/*": ["interfaces/redux/actions/*"],
-      "utilTypes/*": ["interfaces/redux/actions/*"],
-      "api/*": ["api/*"],
-      "consts": ["consts"],
-      "components/*": ["components/*"],
-      "contextApi": ["contextApi"],
-      "customHooks": ["customHooks"],
-      "helpers": ["helpers"],
-      "actions/*": ["redux/actions/*"],
-      "reducers/*": ["redux/reducers/*"],
-      "selectors/*": ["redux/selectors/*"],
+      "reducerTypes/*": [
+        "interfaces/redux/reducers/*"
+      ],
+      "actionTypes/*": [
+        "interfaces/redux/actions/*"
+      ],
+      "utilTypes/*": [
+        "interfaces/redux/actions/*"
+      ],
+      "api/*": [
+        "api/*"
+      ],
+      "consts": [
+        "consts"
+      ],
+      "components/*": [
+        "components/*"
+      ],
+      "contextApi": [
+        "contextApi"
+      ],
+      "customHooks": [
+        "customHooks"
+      ],
+      "helpers": [
+        "helpers"
+      ],
+      "actions/*": [
+        "redux/actions/*"
+      ],
+      "reducers/*": [
+        "redux/reducers/*"
+      ],
+      "selectors/*": [
+        "redux/selectors/*"
+      ]
     }
   },
+  "lib": [
+    "es2019"
+  ]
 }
